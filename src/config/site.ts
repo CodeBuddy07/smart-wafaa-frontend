@@ -20,7 +20,9 @@ export const siteConfig = {
     login: "/login",
     signup: "/signup",
     demo: "#how-it-works",
-    contact: "mailto:hello@smartwafaa.com",
+    contact: "/contact",
+    partners: "/partners",
+    solutions: "/solutions",
   },
 } as const;
 

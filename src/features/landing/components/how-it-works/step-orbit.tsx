@@ -250,7 +250,7 @@ function Connector({ icon, label, gold, className }: ConnectorProps) {
         exit={{ opacity: 0, y: -6 }}
         transition={{ duration: 0.3 }}
         className={cn(
-          "pointer-events-none inline-flex items-center gap-1.5 rounded-full border bg-white px-3 py-1.5 font-sans text-[11px] font-bold shadow-card",
+          "glass pointer-events-none inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-sans text-[11px] font-bold",
           gold ? "border-gold-300 text-accent-amber" : "border-brand-200 text-brand-800",
           className,
         )}

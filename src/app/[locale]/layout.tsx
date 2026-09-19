@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SkipLink } from "@/components/layout/skip-link";
+import { LiquidGlassDefs } from "@/components/motion/liquid-glass-defs";
 import { Providers } from "@/components/motion/providers";
 import { siteConfig } from "@/config/site";
 import { localeDirection, routing, type Locale } from "@/i18n/routing";
@@ -54,7 +55,6 @@ export async function generateMetadata({
     },
     twitter: { card: "summary_large_image", title: t("title"), description: t("description") },
     robots: { index: true, follow: true },
-    icons: { icon: "/icon.svg", apple: "/apple-icon.png" },
   };
 }
 
@@ -77,6 +77,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <body className="relative flex min-h-dvh flex-col">
         <NextIntlClientProvider>
           <Providers>
+            <LiquidGlassDefs />
             <SkipLink />
             <SiteHeader />
             <main id="content" className="flex-1">

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import { AppleStoreCard, GoogleLoyaltyCard, StampGrid } from "./wallet-pass";
+import { AppleStoreCard, GoogleLoyaltyCard } from "./wallet-pass";
 
 describe("AppleStoreCard", () => {
   it("renders logo text, header, primary, fields and barcode alt text in order", () => {
@@ -58,12 +58,5 @@ describe("GoogleLoyaltyCard", () => {
     expect(screen.getByText("2,480")).toBeInTheDocument();
     expect(screen.queryByText("third row")).toBeNull(); // default template shows two rows
     expect(screen.getByText("NB-88410-227")).toBeInTheDocument();
-  });
-});
-
-describe("StampGrid", () => {
-  it("exposes progress to assistive tech", () => {
-    render(<StampGrid filled={9} />);
-    expect(screen.getByRole("img", { name: "9 of 10 stamps" })).toBeInTheDocument();
   });
 });

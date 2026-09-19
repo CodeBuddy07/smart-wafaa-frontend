@@ -2,10 +2,10 @@ import Image from "next/image";
 
 import { Coffee, Gem, ShoppingBag } from "lucide-react";
 
+import { CafeStrip } from "@/components/mockups/strip-art";
 import {
   AppleStoreCard,
   GoogleLoyaltyCard,
-  StampGrid,
   type PassField,
 } from "@/components/mockups/wallet-pass";
 
@@ -31,7 +31,7 @@ export interface GoogleCopy {
   barcodeAlt: string;
 }
 
-/** Roast & Brew — espresso store card with a cream stamp strip. */
+/** Roast & Brew — espresso store card; the strip is the illustrated café scene with 5 stamps. */
 export function CoffeeStampPass({
   copy,
   width,
@@ -57,15 +57,7 @@ export function CoffeeStampPass({
       logoText={copy.logoText}
       header={{ label: copy.headerLabel, value: copy.headerValue }}
       primary={{ label: copy.primaryLabel, value: copy.primaryValue }}
-      strip={
-        // Strip art: stamp grid on cream, fading to the pass colour so the white
-        // primary field stays legible (Apple: keep the area behind text uncluttered).
-        <div className="relative h-full w-full bg-[linear-gradient(180deg,#f6ecdf_0%,#f1e3d0_52%,#3b2418_100%)]">
-          <div className="absolute inset-x-[4%] top-[6%]">
-            <StampGrid filled={stamps} className="w-[60%]" />
-          </div>
-        </div>
-      }
+      strip={<CafeStrip cups={{ filled: stamps, total: 5 }} />}
       fields={copy.fields}
       barcodeAlt={copy.barcodeAlt}
     />

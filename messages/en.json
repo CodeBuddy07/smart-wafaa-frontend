@@ -38,7 +38,7 @@
       "No Credit Card Needed"
     ],
     "stampBadge": {
-      "title": "Stamp 9 of 10 Collected",
+      "title": "Stamp 4 of 5 Collected",
       "subtitle": "1 visit to free morning coffee"
     },
     "retentionBadge": {
@@ -49,10 +49,10 @@
     "cards": {
       "apple": {
         "logoText": "Roast & Brew",
-        "headerLabel": "Stamps",
-        "headerValue": "9/10",
+        "headerLabel": "Coffee",
+        "headerValue": "4/5",
         "primaryLabel": "Coffee stamps",
-        "primaryValue": "9 of 10",
+        "primaryValue": "4 of 5",
         "fields": [
           {
             "label": "Member",
@@ -204,7 +204,7 @@
         {
           "title": "Rules",
           "line1": "Stamp threshold",
-          "line2": "Buy 9 → 10th free",
+          "line2": "Buy 4 → 5th free",
           "status": "Active"
         },
         {
@@ -222,7 +222,7 @@
         {
           "title": "Wallet pass",
           "line1": "Coffee stamps",
-          "line2": "9 of 10 collected",
+          "line2": "4 of 5 collected",
           "status": "Earned"
         }
       ]
@@ -241,7 +241,7 @@
       {
         "title": "Stamp Cards",
         "tag": "Popular",
-        "description": "Buy 9, get the 10th coffee free. Proven retention for cafes and fast casual."
+        "description": "Buy 4, get the 5th coffee free. Proven retention for cafes and fast casual."
       },
       {
         "title": "Subscriptions",
@@ -542,7 +542,7 @@
       },
       {
         "title": "Strip image · 375×144 pt",
-        "body": "Where the stamp grid lives. Re-issued on every punch so the pass updates in place."
+        "body": "Where the illustrated stamp scene lives. Re-rendered on every punch so the pass updates in place."
       },
       {
         "title": "Secondary fields",
@@ -691,5 +691,306 @@
         ]
       }
     }
+  },
+  "solutions": {
+    "eyebrow": "Solutions",
+    "indexTitle": "Loyalty built for your kind of business",
+    "backHome": "Back to home",
+    "heroCta": "Get free merchant account",
+    "heroSecondary": "See how it works",
+    "painTitle": "What holds {industry} back",
+    "mechanicsTitle": "Mechanics that fit {industry}",
+    "mechanicsCta": "Explore all 8 formats",
+    "statsTitle": "What operators see",
+    "faqTitle": "Common questions",
+    "ctaTitle": "Launch your {industry} programme this week",
+    "ctaBody": "Free merchant account, no hardware, passes live in Apple & Google Wallet in an afternoon.",
+    "industries": {
+      "cafes": {
+        "name": "Coffee shops & cafés",
+        "short": "cafés",
+        "title": "Turn the morning regular into a daily habit",
+        "description": "A stamp card that lives in the customer's wallet, updates the second the barista punches it, and pings the lockscreen when they walk past. No paper cards, no app.",
+        "pains": [
+          {
+            "title": "Paper cards get lost",
+            "body": "A third of stamp cards never come back. Wallet passes can't be lost and survive a phone upgrade."
+          },
+          {
+            "title": "Queues at the counter",
+            "body": "Staff punch a stamp in 0.3 s from any phone — faster than finding a card in a purse."
+          },
+          {
+            "title": "No idea who came back",
+            "body": "See return frequency per branch, per hour, per barista instead of guessing."
+          }
+        ],
+        "mechanics": ["Stamp Cards", "Subscriptions", "Cashback Pass"],
+        "stats": [
+          {
+            "value": "+28%",
+            "label": "return-visit uplift"
+          },
+          {
+            "value": "8 s",
+            "label": "to add the pass"
+          },
+          {
+            "value": "0",
+            "label": "app downloads"
+          }
+        ],
+        "faq": [
+          {
+            "q": "Can I run a monthly coffee subscription too?",
+            "a": "Yes — layer a subscription onto the same pass. The customer sees one card; the rules engine handles both."
+          },
+          {
+            "q": "Does it work at busy morning peaks?",
+            "a": "Cashiers scan with the phone camera or any barcode scanner; punches sync offline and reconcile when the connection returns."
+          }
+        ]
+      },
+      "restaurants": {
+        "name": "Restaurants & dining",
+        "short": "restaurants",
+        "title": "Fill quiet nights with guests who already love you",
+        "description": "Points on every SAR spent, a free dessert on the fifth visit, and a wallet push when a table opens up on a slow Tuesday.",
+        "pains": [
+          {
+            "title": "Discount codes train bargain hunters",
+            "body": "Rewards tied to visits and spend reward loyalty, not coupon-clipping."
+          },
+          {
+            "title": "Multi-branch chaos",
+            "body": "One programme across every location, with per-branch staff PINs and analytics."
+          },
+          {
+            "title": "Marketing costs SMS money",
+            "body": "Lockscreen pushes are free and unlimited on iOS and Android."
+          }
+        ],
+        "mechanics": ["Points Rewards", "Memberships", "Privilege Discounts"],
+        "stats": [
+          {
+            "value": "5×",
+            "label": "cheaper than SMS campaigns"
+          },
+          {
+            "value": "12%",
+            "label": "higher average ticket"
+          },
+          {
+            "value": "1 pass",
+            "label": "for every branch"
+          }
+        ],
+        "faq": [
+          {
+            "q": "Can we reward spend rather than visits?",
+            "a": "Yes — points per SAR, with tiers that unlock privileges like priority booking or a chef's-table invite."
+          },
+          {
+            "q": "What about corporate accounts?",
+            "a": "Debit / due tabs let you run trusted credit for corporate clients on the same pass."
+          }
+        ]
+      },
+      "retail": {
+        "name": "Retail boutiques",
+        "short": "boutiques",
+        "title": "A membership card as considered as your store",
+        "description": "Silver, Gold and Platinum tiers with real privileges, seasonal hero imagery on the pass, and cashback that pulls customers back before the next collection drops.",
+        "pains": [
+          {
+            "title": "Plastic cards feel dated",
+            "body": "A designed wallet pass with your brand colours and campaign artwork is the card people show friends."
+          },
+          {
+            "title": "Tiers are hard to run",
+            "body": "Automatic tier upgrades on spend thresholds — no spreadsheets, no manual emails."
+          },
+          {
+            "title": "Seasonal launches fall flat",
+            "body": "Update the hero image and push a lockscreen note to every pass holder in minutes."
+          }
+        ],
+        "mechanics": ["Memberships", "Cashback Pass", "Credit Plans"],
+        "stats": [
+          {
+            "value": "3 tiers",
+            "label": "with automatic upgrades"
+          },
+          {
+            "value": "15%",
+            "label": "of holders return monthly"
+          },
+          {
+            "value": "1 min",
+            "label": "to launch a campaign"
+          }
+        ],
+        "faq": [
+          {
+            "q": "Can each tier have its own card design?",
+            "a": "Yes — every tier can ship with its own colours, artwork and privileges while staying one programme."
+          },
+          {
+            "q": "Does it support gift credit?",
+            "a": "Prepaid credit plans (pay 500, receive 600) live on the same pass and show a live balance."
+          }
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise & chains",
+        "short": "enterprise groups",
+        "title": "One loyalty engine across every brand and branch",
+        "description": "Dedicated Apple Pass Type certificates, a full REST API and webhooks, custom domains and SLAs — for malls, franchise groups and banking partners.",
+        "pains": [
+          {
+            "title": "Brands on different systems",
+            "body": "Run many programmes and brands under one workspace with role-based access."
+          },
+          {
+            "title": "Integration risk",
+            "body": "REST API, webhooks and SSO so passes plug into your POS, CRM and data warehouse."
+          },
+          {
+            "title": "Compliance questions",
+            "body": "PDPL-ready data handling, on-prem options and a named SLA with 99.9% availability."
+          }
+        ],
+        "mechanics": ["Multi-mechanic passes", "Custom domain & branding", "Full REST API"],
+        "stats": [
+          {
+            "value": "99.9%",
+            "label": "availability SLA"
+          },
+          {
+            "value": "∞",
+            "label": "branches and brands"
+          },
+          {
+            "value": "API",
+            "label": "first, with webhooks"
+          }
+        ],
+        "faq": [
+          {
+            "q": "Can we use our own Apple Pass Type ID?",
+            "a": "Yes — enterprise plans sign passes with your own certificate so your brand is the issuer of record."
+          },
+          {
+            "q": "Is there an on-prem or private-cloud option?",
+            "a": "Yes, for banking and government-adjacent partners. Contact sales for architecture details."
+          }
+        ]
+      }
+    }
+  },
+  "partners": {
+    "eyebrow": "Reseller partner programme",
+    "title": "Sell wallet loyalty to every merchant you already serve",
+    "description": "POS resellers, agencies and consultants earn recurring commission on every merchant they onboard — with a white-label portal, wholesale pricing and a partner manager.",
+    "cta": "Apply to partner",
+    "ctaSecondary": "Talk to us",
+    "benefitsTitle": "Why partners choose Smart Wafaa",
+    "benefits": [
+      {
+        "title": "Recurring commission",
+        "body": "25% of subscription revenue for the life of every merchant you bring, paid monthly."
+      },
+      {
+        "title": "White-label",
+        "body": "Your logo, your domain, your invoices. Merchants see your brand; we power it."
+      },
+      {
+        "title": "Partner portal",
+        "body": "Onboard merchants, watch usage and commissions, and manage sub-accounts in one place."
+      },
+      {
+        "title": "Sales enablement",
+        "body": "Demo passes, print kits and a pitch deck localised for the Saudi and GCC market."
+      }
+    ],
+    "stepsTitle": "How it works",
+    "steps": [
+      {
+        "title": "Apply",
+        "body": "Tell us about your business and the merchants you serve. We reply within two business days."
+      },
+      {
+        "title": "Get your portal",
+        "body": "We provision a white-label partner portal and wholesale pricing."
+      },
+      {
+        "title": "Onboard & earn",
+        "body": "Create merchant workspaces from the portal; commission accrues from the first paid month."
+      }
+    ],
+    "whiteLabelTitle": "Agency white-label",
+    "whiteLabelBody": "Run Smart Wafaa under your own brand for the clients you manage. Custom domain, custom colours and consolidated billing.",
+    "portalTitle": "Partner portal",
+    "portalBody": "The portal opens with the merchant dashboard. Request early access and we'll invite you first."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Talk to a human who has launched a loyalty programme",
+    "description": "Sales, partnerships or support — we reply within one business day, in English or Arabic.",
+    "cards": [
+      {
+        "title": "Email",
+        "value": "hello@smartwafaa.com",
+        "href": "mailto:hello@smartwafaa.com"
+      },
+      {
+        "title": "WhatsApp",
+        "value": "+966 5X XXX XXXX",
+        "href": "https://wa.me/9665XXXXXXXX"
+      },
+      {
+        "title": "Office",
+        "value": "Riyadh, Kingdom of Saudi Arabia",
+        "href": "https://maps.google.com/?q=Riyadh%2C+Saudi+Arabia"
+      }
+    ],
+    "hours": "Sunday – Thursday, 9:00 – 18:00 AST",
+    "form": {
+      "title": "Send a message",
+      "name": "Your name",
+      "business": "Business name",
+      "email": "Work email",
+      "topic": "Topic",
+      "topics": ["Sales & pricing", "Partnership", "Support", "Other"],
+      "message": "How can we help?",
+      "submit": "Send message",
+      "note": "Submitting opens your email client with the message pre-filled — no data is stored on this site.",
+      "subject": "Smart Wafaa enquiry — {topic}"
+    }
+  },
+  "access": {
+    "signup": {
+      "eyebrow": "Free merchant account",
+      "title": "Get early access to Smart Wafaa",
+      "description": "The merchant dashboard opens to founding merchants first. Leave your details and we'll set up your workspace with you.",
+      "submit": "Request early access"
+    },
+    "login": {
+      "eyebrow": "Merchant login",
+      "title": "The dashboard opens soon",
+      "description": "Sign-in will live at app.smartwafaa.com. Founding merchants get their credentials by email — request access below if you haven't yet.",
+      "submit": "Request my login"
+    },
+    "form": {
+      "business": "Business name",
+      "email": "Work email",
+      "phone": "Mobile (WhatsApp)",
+      "branches": "Number of branches",
+      "subject": "Smart Wafaa early access — {business}"
+    },
+    "perks": ["No credit card", "Free during early access", "Passes live in Apple & Google Wallet"],
+    "note": "Submitting opens your email client with the request pre-filled — no data is stored on this site.",
+    "altSignup": "New here? Request a free merchant account",
+    "altLogin": "Already a founding merchant? Request your login"
   }
 }

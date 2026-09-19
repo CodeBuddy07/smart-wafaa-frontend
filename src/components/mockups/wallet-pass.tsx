@@ -1,5 +1,3 @@
-import { Coffee } from "lucide-react";
-
 import { QrCode } from "@/components/mockups/qr-code";
 import { cn } from "@/lib/utils";
 
@@ -10,50 +8,6 @@ import { cn } from "@/lib/utils";
 export interface PassField {
   label: string;
   value: string;
-}
-
-interface StampGridProps {
-  filled: number;
-  total?: number;
-  /** Colours drawn into the strip — merchants ship this as `strip.png`. */
-  tone?: "cream" | "dark";
-  className?: string;
-}
-
-/**
- * Stamp progress as it is actually delivered to Apple Wallet: rendered into the
- * 375×144pt strip image (there are no per-field icons in PassKit). Re-issued on
- * every punch so the pass updates in place.
- */
-export function StampGrid({ filled, total = 10, tone = "cream", className }: StampGridProps) {
-  return (
-    <div
-      className={cn("grid grid-cols-5 gap-[6%]", className)}
-      role="img"
-      aria-label={`${filled} of ${total} stamps`}
-    >
-      {Array.from({ length: total }).map((_, i) => {
-        const on = i < filled;
-        return (
-          <span
-            key={i}
-            className={cn(
-              "flex aspect-square items-center justify-center rounded-full border transition-colors",
-              tone === "cream"
-                ? on
-                  ? "border-[#3f2a20] bg-[#3f2a20] text-[#f5e9dc]"
-                  : "border-[#3f2a20]/25 bg-white/40 text-[#3f2a20]/35"
-                : on
-                  ? "border-gold-500 bg-gold-500 text-brand-950"
-                  : "border-white/25 bg-white/5 text-white/30",
-            )}
-          >
-            <Coffee className="size-[52%]" strokeWidth={2.2} />
-          </span>
-        );
-      })}
-    </div>
-  );
 }
 
 /* -------------------------------------------------------------------------- */

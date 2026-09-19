@@ -13,8 +13,8 @@ import { sectionIds } from "@/config/site";
 import { SectionHeading } from "@/features/landing/components/section-heading";
 import { cn } from "@/lib/utils";
 
-const TOTAL_STAMPS = 10;
-const INITIAL_STAMPS = 8;
+const TOTAL_STAMPS = 5;
+const INITIAL_STAMPS = 3;
 const INITIAL_VISITS = 9;
 
 export function StaffRewards() {

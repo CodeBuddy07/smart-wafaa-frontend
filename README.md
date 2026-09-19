@@ -47,16 +47,21 @@ First e2e run: `pnpm exec playwright install chromium webkit`.
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── [locale]/           # layout (fonts, metadata, providers), page, 404, catch-all
+│   ├── [locale]/           # layout, home, 404, catch-all, opengraph-image, and routes:
+│   │   ├── solutions/[industry]  · partners · contact · signup · login · [slug] (legal)
 │   ├── globals.css         # base styles + decorative utilities + keyframes
 │   ├── sitemap.ts · robots.ts · manifest.ts
 ├── components/
 │   ├── ui/                 # design-system primitives (Button, Badge, Card, Container, IconTile)
 │   ├── layout/             # SiteHeader, SiteFooter, LocaleSwitcher, SkipLink
 │   ├── motion/             # Reveal, Stagger, Floating, TextReveal, Marquee, AnimatedNumber, Providers
-│   ├── mockups/            # wallet-pass (Apple store card / Google loyalty card), pass-presets, PhoneFrame (iOS/Android), LockscreenPhone, QrCode
+│   ├── mockups/            # wallet-pass, pass-presets, strip-art (server-style strip composition), PhoneFrame (iOS/Android), LockscreenPhone, QrCode
+│   ├── forms/              # MailtoForm — backend-free forms (swap for an API call later)
+│   ├── seo/                # JsonLd helpers (Organization, SoftwareApplication, FAQPage, Breadcrumb, Service)
 │   └── brand/              # Logo
 ├── features/legal/         # LegalPage — /terms, /privacy, /refunds (drafts, EN + AR)
+├── features/solutions/     # SolutionPage template — cafes · restaurants · retail · enterprise
+├── features/partners/ · contact/ · access/   # partners, contact, signup/login (early access)
 ├── features/landing/
 │   ├── landing-page.tsx    # section order (mirrors the Figma frame + Wallet Preview)
 │   ├── sections/           # one file per section — hero, features, how-it-works, pricing, faq…
@@ -71,6 +76,8 @@ src/
 messages/                   # en.json (schema) · ar.json — key parity is unit-tested
 public/images/how-it-works/ # hand-phone.webp (Gemini-generated, backdrop keyed to alpha)
 public/images/passes/       # boutique-hero.webp (Gemini-generated, Google hero 1032×812)
+public/images/strip/        # café scene + keyed stamp icons that compose the Apple strip
+public/images/solutions/    # industry hero photos (+ -og.jpg copies for Open Graph)
 e2e/                        # Playwright specs
 ```
 
@@ -102,6 +109,19 @@ user selection. On `< lg` screens the ring collapses to a single swipe-style car
 Both take a `width` and scale every dimension from the platform's reference width (375pt / 360dp), so the same
 component is used in the hero fan, the How-it-works phone and the Wallet Preview section. The stamp grid is
 drawn _into the strip_ (`StampGrid`) because that is how stamp progress actually ships to Apple Wallet.
+
+## Liquid Glass
+
+`src/app/globals.css` defines `glass`, `glass-refract`, `glass-dark` and `glass-sheen` utilities: saturated backdrop
+blur, specular top/edge highlights, a gradient rim, and — on Chromium — an SVG displacement filter
+(`LiquidGlassDefs`) referenced through `backdrop-filter: url(#lg-refract)` for real lensing. Applied to the header,
+pills, toggles and floating badges; everything degrades to plain frosted glass elsewhere.
+
+## SEO
+
+See `../docs/seo.md`. In short: per-page metadata + hreflang, dynamic OG images (`opengraph-image.tsx`, Satori;
+Arabic uses Readex Pro because Noto/Amiri/IBM Plex Arabic hit unsupported GSUB lookups), JSON-LD, full sitemap.
+Set `NEXT_PUBLIC_SITE_URL` in Vercel.
 
 ## Assets
 

@@ -8,6 +8,18 @@ import { routing } from "@/i18n/routing";
 
 const COLUMNS = ["product", "solutions", "partners", "security"] as const;
 const LEGAL_HREFS = ["/terms", "/privacy", "/refunds"] as const;
+/** Destinations for the link columns, in the same order as `footer.columns.*.links`. */
+const COLUMN_HREFS: Record<(typeof COLUMNS)[number], readonly string[]> = {
+  product: ["/#card-programme", "/#card-programme", "/#card-programme", "/#card-programme"],
+  solutions: [
+    "/solutions/cafes",
+    "/solutions/restaurants",
+    "/solutions/retail",
+    "/solutions/enterprise",
+  ],
+  partners: ["/partners", "/partners#white-label", "/partners#portal"],
+  security: [],
+};
 
 export function SiteFooter() {
   const t = useTranslations("footer");
@@ -37,7 +49,7 @@ export function SiteFooter() {
                   {t(`columns.${col}.title`)}
                 </h3>
                 <ul className="mt-5 flex flex-col gap-3">
-                  {links.map((label) => (
+                  {links.map((label, i) => (
                     <li key={label}>
                       {isSecurity ? (
                         <span className="inline-flex items-center gap-2 text-sm text-ink-300">
@@ -45,23 +57,23 @@ export function SiteFooter() {
                           {label}
                         </span>
                       ) : (
-                        <a
-                          href="#"
+                        <Link
+                          href={COLUMN_HREFS[col][i] ?? "/"}
                           className="text-sm text-ink-300 transition-colors hover:text-white"
                         >
                           {label}
-                        </a>
+                        </Link>
                       )}
                     </li>
                   ))}
                   {isSecurity && (
                     <li className="pt-1">
-                      <a
-                        href="#"
+                      <Link
+                        href="/privacy"
                         className="text-sm text-ink-400 underline-offset-4 hover:text-white hover:underline"
                       >
                         {t("privacy")}
-                      </a>
+                      </Link>
                     </li>
                   )}
                 </ul>

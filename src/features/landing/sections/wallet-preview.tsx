@@ -80,7 +80,7 @@ export function WalletPreview() {
           <div
             role="tablist"
             aria-label="Wallet platform"
-            className="inline-flex items-center rounded-full border border-ink-200 bg-white p-1 font-sans text-[13px] font-semibold shadow-card"
+            className="glass inline-flex items-center rounded-full p-1 font-sans text-[13px] font-semibold"
           >
             {(["apple", "google"] as Platform[]).map((p) => {
               const active = platform === p;

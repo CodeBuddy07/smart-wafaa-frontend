@@ -97,7 +97,7 @@ export function StepPhone({ active, screens, className }: StepPhoneProps) {
           transition={{ duration: 0.5 }}
           style={{ borderRadius: 6 }}
         >
-          <CoffeeStampPass copy={apple} width={205} stamps={earned ? 10 : 9} />
+          <CoffeeStampPass copy={apple} width={205} stamps={earned ? 5 : 4} />
         </motion.div>
       </div>
     </PhoneFrame>

@@ -41,7 +41,7 @@ export function Pricing() {
           <div
             role="radiogroup"
             aria-label={`${t("monthly")} / ${t("yearly")}`}
-            className="relative inline-flex items-center rounded-full border border-ink-200 bg-white p-1 font-sans text-[13px] font-semibold shadow-card"
+            className="glass relative inline-flex items-center rounded-full p-1 font-sans text-[13px] font-semibold"
           >
             {(["monthly", "yearly"] as Billing[]).map((b) => {
               const active = billing === b;

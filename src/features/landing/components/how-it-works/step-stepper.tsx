@@ -28,7 +28,7 @@ export function StepStepper({
       <div
         role="tablist"
         aria-orientation="horizontal"
-        className="relative flex max-w-full scrollbar-none items-center gap-1 overflow-x-auto rounded-full border border-ink-200/70 bg-white/80 p-1.5 shadow-card backdrop-blur"
+        className="glass relative flex max-w-full scrollbar-none items-center gap-1 overflow-x-auto rounded-full p-1.5"
       >
         {steps.map((step, i) => {
           const isActive = i === active;

@@ -136,3 +136,63 @@ test.describe("seo", () => {
     await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
   });
 });
+
+test.describe("pages", () => {
+  for (const path of [
+    "/solutions/cafes",
+    "/solutions/restaurants",
+    "/solutions/retail",
+    "/solutions/enterprise",
+    "/partners",
+    "/contact",
+    "/signup",
+    "/login",
+  ]) {
+    test(`${path} renders with an H1 in both locales`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      await page.goto(`/ar${path}`);
+      await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    });
+  }
+
+  test("footer solution links resolve to solution pages", async ({ page }) => {
+    await page.goto("/");
+    await page
+      .locator("footer")
+      .getByRole("link", { name: /retail boutiques/i })
+      .click();
+    await expect(page).toHaveURL(/\/solutions\/retail$/);
+  });
+});
+
+test.describe("seo extras", () => {
+  test("home ships JSON-LD for Organization, SoftwareApplication and FAQPage", async ({ page }) => {
+    await page.goto("/");
+    const blobs = await page.locator('script[type="application/ld+json"]').allTextContents();
+    const all = blobs.join(" ");
+    expect(all).toContain('"Organization"');
+    expect(all).toContain('"SoftwareApplication"');
+    expect(all).toContain('"FAQPage"');
+  });
+
+  test("open graph images render for both locales", async ({ request }) => {
+    for (const path of [
+      "/opengraph-image",
+      "/ar/opengraph-image",
+      "/solutions/cafes/opengraph-image",
+    ]) {
+      const res = await request.get(path);
+      expect(res.ok(), path).toBeTruthy();
+      expect(res.headers()["content-type"]).toContain("image/png");
+    }
+  });
+
+  test("sitemap lists solution and legal pages with hreflang", async ({ request }) => {
+    const xml = await (await request.get("/sitemap.xml")).text();
+    expect(xml).toContain("/solutions/cafes");
+    expect(xml).toContain("/ar/partners");
+    expect(xml).toContain('hreflang="ar"');
+  });
+});

@@ -64,7 +64,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: EASE, delay: 0.15 }}
-              className="group inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/80 py-1.5 ps-3 pe-2 font-sans text-[12px] font-semibold text-ink-900 shadow-float backdrop-blur transition hover:bg-white"
+              className="glass glass-sheen group inline-flex items-center gap-2 rounded-full py-1.5 ps-3 pe-2 font-sans text-[12px] font-semibold text-ink-900 transition hover:bg-white/80"
             >
               <span className="relative flex size-2">
                 <span className="motion-ok:animate-pulse-ring absolute inline-flex size-full rounded-full bg-accent-live" />
@@ -246,7 +246,7 @@ function HeroCards() {
           style={{ translateZ: 80 }}
         >
           <Floating amplitude={5} duration={4.5} delay={0.2}>
-            <div className="flex items-center gap-3 rounded-2xl border border-white/80 bg-white/90 py-2.5 ps-2.5 pe-4 shadow-[0_18px_40px_-16px_rgb(6_78_59/0.3)] backdrop-blur">
+            <div className="glass flex items-center gap-3 rounded-2xl bg-white/80 py-2.5 ps-2.5 pe-4 shadow-[0_18px_40px_-16px_rgb(6_78_59/0.3)]">
               <span className="flex size-8 items-center justify-center rounded-lg bg-brand-50 text-brand-800">
                 <Stamp className="size-4" />
               </span>
@@ -269,7 +269,7 @@ function HeroCards() {
           style={{ translateZ: 90 }}
         >
           <Floating amplitude={6} duration={5} delay={1}>
-            <div className="flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 p-3 pe-4 shadow-[0_18px_40px_-16px_rgb(6_78_59/0.3)] backdrop-blur">
+            <div className="glass flex items-center gap-3 rounded-2xl bg-white/85 p-3 pe-4 shadow-[0_18px_40px_-16px_rgb(6_78_59/0.3)]">
               <span className="flex size-9 items-center justify-center rounded-lg bg-brand-50 text-brand-800">
                 <TrendingUp className="size-4" />
               </span>

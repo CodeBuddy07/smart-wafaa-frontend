@@ -71,9 +71,9 @@ export function SiteHeader() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className={cn(
-            "relative flex h-[var(--header-height)] items-center justify-between rounded-full border ps-5 pe-2.5",
-            "border-white/70 bg-white/70 backdrop-blur-xl backdrop-saturate-150 transition-[box-shadow,background-color] duration-500",
-            scrolled ? "bg-white/85 shadow-[0_18px_45px_-12px_rgb(6_78_59/0.18)]" : "shadow-float",
+            "glass glass-refract relative flex h-[var(--header-height)] items-center justify-between rounded-full ps-5 pe-2.5",
+            "transition-[box-shadow,background-color] duration-500",
+            scrolled ? "bg-white/75 shadow-[0_18px_45px_-12px_rgb(6_78_59/0.2)]" : "",
           )}
         >
           <Link href="/" aria-label={tc("brand")} className="rounded-full">
@@ -145,7 +145,7 @@ export function SiteHeader() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -12, scale: 0.98 }}
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-3 rounded-3xl border border-white/70 bg-white/90 p-3 shadow-[0_24px_60px_-20px_rgb(6_78_59/0.25)] backdrop-blur-xl lg:hidden"
+              className="glass mt-3 rounded-3xl bg-white/85 p-3 shadow-[0_24px_60px_-20px_rgb(6_78_59/0.25)] lg:hidden"
             >
               <ul className="flex flex-col">
                 {NAV.map((item, i) => (

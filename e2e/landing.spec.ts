@@ -1,0 +1,104 @@
+import { expect, test } from "@playwright/test";
+
+test.describe("landing page", () => {
+  test("renders the hero and primary CTA", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText(
+      "The Smart Way To Reward Customers.",
+    );
+    await expect(page.getByRole("link", { name: /get free merchant account/i })).toBeVisible();
+  });
+
+  test("exposes every section anchor used by the header nav", async ({ page }) => {
+    await page.goto("/");
+    for (const id of [
+      "features",
+      "how-it-works",
+      "card-programme",
+      "pricing",
+      "faq",
+      "get-started",
+    ]) {
+      await expect(page.locator(`#${id}`)).toHaveCount(1);
+    }
+  });
+
+  test("how-it-works: selecting a step focuses its card", async ({ page, isMobile }) => {
+    await page.goto("/");
+    await page.locator("#how-it-works").scrollIntoViewIfNeeded();
+    await page.getByRole("tab", { name: /brand/i }).click();
+    await expect(page.getByRole("tab", { name: /brand/i })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+    if (!isMobile) {
+      await expect(
+        page.getByRole("button", { name: /step 3: brand & customise/i }),
+      ).toHaveAttribute("aria-pressed", "true");
+    }
+  });
+
+  test("pricing toggle switches to yearly prices", async ({ page }) => {
+    await page.goto("/");
+    await page.locator("#pricing").scrollIntoViewIfNeeded();
+    const growth = page.locator("#pricing article").nth(1);
+    await expect(growth).toContainText("$129");
+    await page.getByRole("radio", { name: /yearly/i }).click();
+    await expect(growth).toContainText("$103");
+  });
+
+  test("faq accordion expands and collapses", async ({ page }) => {
+    await page.goto("/");
+    const second = page.locator("#faq button[aria-expanded]").nth(1);
+    await second.scrollIntoViewIfNeeded();
+    await expect(second).toHaveAttribute("aria-expanded", "false");
+    await second.click();
+    await expect(second).toHaveAttribute("aria-expanded", "true");
+  });
+
+  test("staff terminal lets you add stamps and redeem", async ({ page }) => {
+    await page.goto("/");
+    const addStamp = page.getByRole("button", { name: /add 1 stamp/i });
+    await addStamp.scrollIntoViewIfNeeded();
+    const redeem = page.getByRole("button", { name: /redeem free drink/i });
+    await expect(redeem).toBeDisabled();
+    await addStamp.click();
+    await addStamp.click();
+    await expect(addStamp).toBeDisabled();
+    await expect(redeem).toBeEnabled();
+    await redeem.click();
+    await expect(addStamp).toBeEnabled();
+  });
+});
+
+test.describe("i18n", () => {
+  test("arabic route is RTL with translated content", async ({ page }) => {
+    await page.goto("/ar");
+    await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+    await expect(page.locator("html")).toHaveAttribute("lang", "ar");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("الطريقة الذكية");
+  });
+
+  test("locale switcher navigates between locales", async ({ page, isMobile }) => {
+    await page.goto("/");
+    if (isMobile) await page.getByRole("button", { name: /open menu/i }).click();
+    await page.getByRole("radio", { name: "AR" }).locator("visible=true").first().click();
+    await expect(page).toHaveURL(/\/ar$/);
+    await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+  });
+});
+
+test.describe("seo", () => {
+  test("serves sitemap, robots and manifest", async ({ request }) => {
+    for (const path of ["/sitemap.xml", "/robots.txt", "/manifest.webmanifest"]) {
+      const res = await request.get(path);
+      expect(res.ok(), path).toBeTruthy();
+    }
+  });
+
+  test("has canonical + hreflang alternates", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.locator('link[rel="alternate"][hreflang="ar"]')).toHaveCount(1);
+    await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
+  });
+});

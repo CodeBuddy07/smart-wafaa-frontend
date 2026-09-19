@@ -1,0 +1,105 @@
+/*
+ * Smart Wafaa — Tailwind v4 theme (design tokens).
+ * Imported once from app/globals.css. Keep in sync with lib/tokens.ts.
+ *
+ */
+@import "tailwindcss";
+
+@theme {
+  /* ---------- colour ---------- */
+  --color-brand-950: #00261c;
+  --color-brand-900: #064e3b;
+  --color-brand-800: #0f4c3a;
+  --color-brand-700: #166534;
+  --color-brand-600: #15803d;
+  --color-brand-500: #16a34a;
+  --color-brand-400: #22c55e;
+  --color-brand-300: #4ade80;
+  --color-brand-200: #bbf7d0;
+  --color-brand-100: #dcfce7;
+  --color-brand-50: #f0fdf4;
+
+  --color-gold-700: #b8860b;
+  --color-gold-600: #d4af37;
+  --color-gold-500: #e8c547;
+  --color-gold-400: #f2d774;
+  --color-gold-200: #f6e7c1;
+  --color-gold-100: #fbf3dc;
+  --color-gold-50: #fdf9ee;
+
+  --color-ink-950: #0b1120;
+  --color-ink-900: #0f172a;
+  --color-ink-800: #1e293b;
+  --color-ink-700: #334155;
+  --color-ink-600: #475569;
+  --color-ink-500: #64748b;
+  --color-ink-400: #94a3b8;
+  --color-ink-300: #cbd5e1;
+  --color-ink-200: #e2e8f0;
+  --color-ink-100: #f1f5f9;
+  --color-ink-50: #f8fafc;
+
+  --color-surface-canvas: #ffffff;
+  --color-surface-subtle: #f8faf8;
+  --color-surface-muted: #f3f6f4;
+  --color-surface-dark: #0f1a24;
+  --color-surface-darker: #0b1219;
+
+  --color-accent-purple: #7c3aed;
+  --color-accent-purple-soft: #f3e8ff;
+  --color-accent-amber: #b45309;
+  --color-accent-amber-soft: #fef3c7;
+  --color-accent-emerald-soft: #ecfdf5;
+  --color-accent-live: #10b981;
+
+  /* ---------- type ---------- */
+  --font-display: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-sans: var(--font-ibm-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: var(--font-ibm-plex-arabic), var(--font-ibm-plex), system-ui, sans-serif;
+
+  --text-display-xl: 62px;
+  --text-display-xl--line-height: 1.05;
+  --text-display-xl--letter-spacing: -0.025em;
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-md: 40px;
+  --text-display-md--line-height: 1.15;
+  --text-display-md--letter-spacing: -0.02em;
+  --text-display-sm: 30px;
+  --text-display-sm--line-height: 1.2;
+  --text-display-sm--letter-spacing: -0.015em;
+
+  --text-lead: 19px;
+  --text-lead--line-height: 1.625;
+
+  /* ---------- radius ---------- */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  /* ---------- shadows ---------- */
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px -12px rgb(15 23 42 / 0.12);
+  --shadow-card-hover: 0 2px 4px rgb(15 23 42 / 0.05), 0 20px 40px -16px rgb(15 23 42 / 0.2);
+  --shadow-float: 0 10px 35px -5px rgb(6 78 59 / 0.08);
+  --shadow-glow-brand: 0 2px 4px -2px rgb(15 76 58 / 0.25), 0 4px 6px -1px rgb(15 76 58 / 0.25);
+  --shadow-glow-gold: 0 8px 24px -8px rgb(212 175 55 / 0.55);
+  --shadow-dark-card: 0 30px 60px -20px rgb(0 0 0 / 0.45);
+
+  /* ---------- easing ---------- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---------- layout ---------- */
+  --container-content: 1140px;
+  --spacing-gutter: 150px;
+}
+
+/* Custom variants */
+@custom-variant rtl (&:where([dir="rtl"], [dir="rtl"] *));
+@custom-variant ltr (&:where([dir="ltr"], [dir="ltr"] *));
+@custom-variant motion-ok (@media (prefers-reduced-motion: no-preference));

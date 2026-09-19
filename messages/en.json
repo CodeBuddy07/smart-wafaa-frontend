@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "Smart Wafaa — Native Wallet Loyalty Engine",
+    "titleTemplate": "%s · Smart Wafaa",
+    "description": "Create modular digital loyalty programmes with stamps, subscriptions, cashback, tiers, tabs and points — delivered directly inside Apple & Google Wallet in seconds. No app downloads, no hardware.",
+    "keywords": "loyalty programme, Apple Wallet, Google Wallet, stamp cards, digital loyalty, Saudi Arabia, cashback, subscriptions"
+  },
+  "common": {
+    "brand": "Smart Wafaa",
+    "skipToContent": "Skip to content",
+    "step": "Step {current} of {total}",
+    "stepShort": "Step {n}",
+    "next": "Next: {label}",
+    "learnMore": "Learn more",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchLanguage": "Switch language",
+    "tokenized": "Tokenized"
+  },
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "cardProgramme": "Card programme",
+    "pricing": "Pricing",
+    "login": "Login",
+    "startFreeTrial": "Start Free Trial"
+  },
+  "hero": {
+    "eyebrow": "Smart Wafaa App Downloads • Native Apple & Google Wallet",
+    "title": "The Smart Way To Reward Customers.",
+    "accent": "Right In Their Wallet.",
+    "description": "Create modular digital loyalty programmes with stamps, subscriptions, cashback, tiers, tabs, and points—delivered directly inside smartphone wallets in seconds.",
+    "ctaPrimary": "Get Free Merchant Account",
+    "ctaSecondary": "Watch Interactive Demo",
+    "trust": [
+      "Apple & Google Signed Passes",
+      "8-Second Customer Pass Save",
+      "No Credit Card Needed"
+    ],
+    "stampBadge": {
+      "title": "Stamp 9 of 10 Collected",
+      "subtitle": "1 visit to free morning coffee"
+    },
+    "retentionBadge": {
+      "label": "Visit retention uplift",
+      "value": "+28.4% Return Rate",
+      "live": "Live Stream"
+    },
+    "cards": {
+      "coffee": {
+        "brand": "Coffee Shop",
+        "stamps": "Coffee stamps (1/5)",
+        "sweet": "Sweet (2/5)",
+        "gift": "Gift",
+        "fullName": "Full name",
+        "holder": "Khaled Aldogme"
+      },
+      "dark": { "holder": "Lukas Muller", "tier": "Black Tier", "points": "12,480 pts" },
+      "light": { "hello": "Hello", "holder": "Rayan", "balance": "Balance", "amount": "SAR 240" }
+    }
+  },
+  "architecture": {
+    "eyebrow": "Core Architecture • Built for Instant Adoption",
+    "note": "Zero customer friction • Sub-second staff execution",
+    "items": [
+      {
+        "title": "Digital Wallet Native",
+        "description": "Stamps, subscriptions, points, credit tabs & cashback."
+      },
+      {
+        "title": "8+ Loyalty Mechanics",
+        "description": "Stamps, subscriptions, points, credit tabs & cashback."
+      },
+      {
+        "title": "Smart Wafaa-App Friction",
+        "description": "No app store downloads, 10x higher customer sign-up."
+      },
+      {
+        "title": "Zero Hardware Costs",
+        "description": "Works on any merchant smartphone, barcode scanner."
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Built for maximum retention",
+    "title": "Everything You Need to Build Repeat Customer Loyalty",
+    "description": "From creating interactive loyalty cards to orchestrating customer flows, staff actions, and multi-branch analytics—all under one unified platform.",
+    "items": [
+      {
+        "title": "Modular Programmes",
+        "description": "Stamps, recurring subscriptions, prepaid credit tabs, cashback, and VIP membership tiers crafted to mirror your exact operational model.",
+        "link": "8 Core Formats"
+      },
+      {
+        "title": "Native Digital Wallet",
+        "description": "Works natively in Apple Wallet (iOS) & Google Wallet (Android). Zero app downloads required — 1-click NFC tap, dynamic QR & instant lockscreen pass updates.",
+        "link": "iOS & Android Native"
+      },
+      {
+        "title": "Cohort Intelligence",
+        "description": "Track true return visit frequencies, customer lifetime spend uplifts, peak branch traffic, and staff accountability in real-time.",
+        "link": "Live Multi-Branch"
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "Frictionless deployment",
+    "title": "How Smart Wafaa Works",
+    "description": "From a 5-minute workspace setup to contactless smartphone wallet passes. Follow the natural step-by-step path that powers repeat customer visits.",
+    "startHere": "Start here",
+    "activeLoyalty": "Active loyalty",
+    "passStudio": "Pass Studio",
+    "steps": [
+      {
+        "short": "Workspace",
+        "title": "Create Merchant Hub",
+        "description": "Register your workspace in 60 seconds. Add unlimited store branches, configure branch details, visit rules, and assign manager access credentials.",
+        "footnote": "Workspace Ready in 60s",
+        "next": "Mechanics"
+      },
+      {
+        "short": "Rules",
+        "title": "Configure Mechanics",
+        "description": "Choose single or layered mechanics: stamp thresholds, recurring memberships, prepaid spend credits, or VIP status tiers with automatic cashier discounts.",
+        "footnote": "Modular Rules Engine",
+        "next": "Pass Studio"
+      },
+      {
+        "short": "Brand",
+        "title": "Brand & Customise",
+        "description": "Upload logo, hex colors, custom stamps, and Apple/Google lockscreen banners in the real-time visual pass studio.",
+        "footnote": "Instant Wallet Preview",
+        "next": "Distribute"
+      },
+      {
+        "short": "Deploy",
+        "title": "Deploy & Distribute",
+        "description": "Print elegant countertop QR standees, generate dynamic Instagram bio links, or send instant opt-in SMS invites without any developer integration.",
+        "footnote": "Pre-generated Print Kits",
+        "next": "Instant Earn"
+      },
+      {
+        "short": "Earn",
+        "title": "Instant Wallet Tap & Earn",
+        "description": "Customers scan once to add the pass to Apple or Google Wallet. Cashiers punch rewards in 0.3s at checkout with live lockscreen push notifications.",
+        "footnote": "100m Lockscreen Geopush",
+        "next": "Workspace"
+      }
+    ],
+    "phone": {
+      "back": "Cards",
+      "actions": "Actions",
+      "hello": "Hello",
+      "holder": "Rayan",
+      "yourGift": "Your gift",
+      "screens": [
+        {
+          "title": "Workspace",
+          "line1": "Roast & Brew",
+          "line2": "3 branches • Riyadh",
+          "status": "Ready"
+        },
+        {
+          "title": "Rules",
+          "line1": "Stamp threshold",
+          "line2": "Buy 9 → 10th free",
+          "status": "Active"
+        },
+        {
+          "title": "Pass Studio",
+          "line1": "Brand colours",
+          "line2": "#0F4C3A • Logo set",
+          "status": "Preview"
+        },
+        {
+          "title": "Distribute",
+          "line1": "QR standee",
+          "line2": "Print kit • Bio link",
+          "status": "Live"
+        },
+        {
+          "title": "Wallet pass",
+          "line1": "Coffee stamps",
+          "line2": "9 of 10 collected",
+          "status": "Earned"
+        }
+      ]
+    },
+    "trust": [
+      "Apple PassKit & Google Pay Certified",
+      "Offline Cashier Punch Support",
+      "End-to-End Cryptographic Signatures"
+    ]
+  },
+  "formats": {
+    "eyebrow": "Flexible architecture",
+    "title": "Flexible Reward Formats for Any Store",
+    "description": "Configure one or layer several mechanics into a single friction-free pass on customer phones.",
+    "items": [
+      {
+        "title": "Stamp Cards",
+        "tag": "Popular",
+        "description": "Buy 9, get the 10th coffee free. Proven retention for cafes and fast casual."
+      },
+      {
+        "title": "Subscriptions",
+        "tag": "Recurring",
+        "description": "e.g. 100 SAR/mo for daily drip coffee or weekly services. Guaranteed cash flow."
+      },
+      {
+        "title": "Credit Plans",
+        "tag": "Prepaid",
+        "description": "Preload spend credit (Pay 500 SAR, receive 600 SAR wallet spend balance)."
+      },
+      {
+        "title": "Debit / Due Tabs",
+        "tag": "Settlement",
+        "description": "Maintain trusted credit tabs for corporate accounts and VIP regulars."
+      },
+      {
+        "title": "Cashback Pass",
+        "tag": "High ROI",
+        "description": "Instant % wallet balance return to incentivize prompt repeat visits."
+      },
+      {
+        "title": "Memberships",
+        "tag": "Tiers",
+        "description": "Silver, Gold, Platinum status cards with customized exclusive privileges."
+      },
+      {
+        "title": "Privilege Discounts",
+        "tag": "Privilege",
+        "description": "Expiring percentage reductions for partner corporations, staff, or students."
+      },
+      {
+        "title": "Points Rewards",
+        "tag": "Classic",
+        "description": "Earn points per currency spent, redeemed against an item catalogue."
+      }
+    ],
+    "grouped": {
+      "eyebrow": "Grouped architecture",
+      "title": "Layer Mechanics into a Single Pass",
+      "description": "Why limit your brand to stamps? Combine subscriptions, cashback, credit balances, and tiers onto one single Apple & Google Wallet pass.",
+      "combos": [
+        {
+          "title": "Stamp + Subscription",
+          "description": "Customers pay monthly pass fee while gathering extra stamps for specialty pastries."
+        },
+        {
+          "title": "Credit + Due + Cashback",
+          "description": "Prepaid stored value balance with 5% instant cashback topped up on every recharge."
+        },
+        {
+          "title": "Membership + Discount",
+          "description": "VIP Gold tiers with automated 15% discounts triggered seamlessly at the cashier register."
+        }
+      ]
+    }
+  },
+  "why": {
+    "eyebrow": "Proven retention architecture",
+    "title": "Why Use a Loyalty Programme?",
+    "description": "Turn one-time purchases into repeat customers with rewards, personalised benefits, and meaningful engagement.",
+    "items": [
+      {
+        "title": "Increase Customer Retention",
+        "description": "Give customers a reason to return and build long-term relationships."
+      },
+      {
+        "title": "Encourage Repeat Purchases",
+        "description": "Reward customers for coming back, spending more, and reaching new milestones."
+      },
+      {
+        "title": "Reward Customer Loyalty",
+        "description": "Offer stamps, cashback, points, discounts, memberships, and subscription benefits."
+      },
+      {
+        "title": "Increase Customer Engagement",
+        "description": "Keep customers connected with relevant rewards, messages, and ongoing benefits."
+      },
+      {
+        "title": "Understand Customer Behaviour",
+        "description": "Track purchases, rewards, visits, and loyalty activity to make better business decisions."
+      },
+      {
+        "title": "Build a Stronger Customer Relationship",
+        "description": "Create personalised experiences that make customers feel recognised and valued."
+      }
+    ],
+    "cta": "Start Building Customer Loyalty"
+  },
+  "push": {
+    "eyebrow": "Proximity push notifications",
+    "title": "Reach Customers on Their Lockscreen Without Paying SMS Fees",
+    "description": "Harness native Apple & Google Wallet automated push updates. Broadcast real-time reward alerts, tier upgrades, and point balance reminders straight to customer lockscreens.",
+    "items": [
+      {
+        "title": "Zero SMS Cost",
+        "description": "Wallet push notifications are 100% free and unlimited on iOS & Android."
+      },
+      {
+        "title": "Instant Wallet Push",
+        "description": "Automated reward alerts, stamp milestones, and perk updates on iOS & Android."
+      }
+    ],
+    "phone": {
+      "time": "9:41",
+      "day": "Thursday",
+      "date": "October 24",
+      "merchant": "Roast & Brew",
+      "distance": "100m away",
+      "title": "You are near Roast & Brew Olaya!",
+      "body": "You are only 1 stamp away from your free morning coffee. Tap to open pass."
+    }
+  },
+  "staff": {
+    "eyebrow": "Staff rewards",
+    "title": "Add Stamps & Redeem Rewards in Seconds",
+    "description": "Quickly update customer loyalty cards and redeem eligible rewards during checkout with simple, staff-ready actions.",
+    "checklist": [
+      "Instant stamp updates for eligible purchases",
+      "One-click reward redemption when customers qualify",
+      "Every action is recorded with customer, staff and branch activity history"
+    ],
+    "terminal": {
+      "title": "Terminal #02 • Active",
+      "staff": "Staff: Layla K. (PIN: 4021)",
+      "customer": "Faris Al-Mansoor",
+      "phone": "+966 50 *** 9481",
+      "visits": "{count} Visits",
+      "tier": "VIP Gold",
+      "addStamp": "Add 1 Stamp",
+      "redeem": "Redeem Free Drink",
+      "stamps": "{count} of {total} stamps",
+      "redeemed": "Free drink redeemed!",
+      "logged": "Logged • Layla K. • Branch 02"
+    }
+  },
+  "pricing": {
+    "eyebrow": "Transparent pricing",
+    "title": "Predictable Plans Built for Scale",
+    "description": "No setup fees. No long-term lock-in. Upgrade or cancel anytime.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "yearlySave": "Save 20%",
+    "perMonth": "/month",
+    "billedYearly": "billed yearly",
+    "mostPopular": "Most popular",
+    "custom": "Custom",
+    "plans": [
+      {
+        "name": "Basic",
+        "description": "For single boutique cafes and independent retail shops.",
+        "features": [
+          "1 Store Location",
+          "3 Staff Terminal PINs",
+          "1,000 Active Passes",
+          "Stamps & Points System"
+        ],
+        "cta": "Get Started"
+      },
+      {
+        "name": "Growth",
+        "description": "For growing multi-branch dining, roasteries, and salons.",
+        "features": [
+          "Up to 5 Branch Locations",
+          "15 Staff Cashier PINs",
+          "10,000 Active Passes",
+          "All 8 Loyalty Mechanics",
+          "Geofenced Lockscreen Push"
+        ],
+        "cta": "Choose Growth"
+      },
+      {
+        "name": "Pro",
+        "description": "For regional franchise operations and retail groups.",
+        "features": [
+          "Unlimited Branch Locations",
+          "50 Cashier Accounts",
+          "50,000 Active Passes",
+          "Custom Domain & Branding"
+        ],
+        "cta": "Choose Pro"
+      },
+      {
+        "name": "Enterprise",
+        "description": "For major malls, enterprise conglomerates, and banking partners.",
+        "features": [
+          "Dedicated Apple Pass Certificate",
+          "Full REST API & Webhooks",
+          "Custom SLA & On-prem Support"
+        ],
+        "cta": "Contact Sales"
+      }
+    ]
+  },
+  "trusted": {
+    "eyebrow": "Trusted by premier roasteries, hospitality brands & retail networks",
+    "logos": ["Roast & Brew", "Levant Gourmet", "Camel Step", "Nakheel Boutiques", "Forge Club"]
+  },
+  "faq": {
+    "eyebrow": "Got questions?",
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "What is Smart Wafaa and how does it work with Apple & Google Wallet?",
+        "a": "Smart Wafaa is a native loyalty engine. You design a pass once, and customers add it to Apple Wallet or Google Wallet with a single tap. Every stamp, point or balance update is pushed to the pass instantly and signed with Apple PassKit and Google Pay certificates."
+      },
+      {
+        "q": "Do my customers need to download a separate mobile app?",
+        "a": "No. Passes live inside the wallet app that already ships on every iPhone and Android device. Customers scan a QR code or tap an NFC standee and the pass is saved in under eight seconds."
+      },
+      {
+        "q": "Can I combine multiple mechanics on a single card?",
+        "a": "Yes. Layer stamps, subscriptions, prepaid credit, cashback, tiers and discounts onto one pass. The rules engine resolves them at the till so staff only ever see a single customer card."
+      },
+      {
+        "q": "How do store staff authenticate and punch customer passes?",
+        "a": "Each cashier gets a personal PIN on the staff terminal. They scan the customer pass with any smartphone camera or barcode scanner, and every action is logged against the staff member, customer and branch."
+      },
+      {
+        "q": "How does the Reseller Partner Programme work?",
+        "a": "Agencies and POS resellers get a white-label partner portal, wholesale pricing and recurring commission on every merchant they onboard. Apply from the Partners page and our team will set up your portal within two business days."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Start today in 5 minutes",
+    "title": "Ready to Turn One-Time Visitors Into Loyal Regulars?",
+    "description": "Create your Smart Wafaa merchant account in minutes. No developers, zero hardware required, and no app store delays.",
+    "primary": "Start for free",
+    "secondary": "Contact us"
+  },
+  "footer": {
+    "tagline": "Enterprise Native Loyalty Engine for Apple & Google Wallet passes.",
+    "certified": "Apple PassKit Certified",
+    "columns": {
+      "product": {
+        "title": "Product",
+        "links": ["Stamps & Points", "Cashback Cards", "Subscriptions", "Multi-Mechanic Passes"]
+      },
+      "solutions": {
+        "title": "Solutions",
+        "links": [
+          "Coffee Shops & Cafes",
+          "Restaurants & Dining",
+          "Retail Boutiques",
+          "Enterprise Chains"
+        ]
+      },
+      "partners": {
+        "title": "Partners",
+        "links": ["Reseller Programme", "Agency White-Label", "Partner Portal"]
+      },
+      "security": {
+        "title": "Security",
+        "links": ["ISO 27001 Certified", "PCI-DSS Level 1", "TLS 1.3 Bank Grade"]
+      }
+    },
+    "privacy": "Privacy & Security Policy",
+    "copyright": "Copyright © {year} Smart Wafaa Native Loyalty Engine. All rights reserved.",
+    "languages": { "en": "English (EN)", "ar": "العربية (AR)" }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has moved.",
+    "back": "Back to home"
+  }
+}

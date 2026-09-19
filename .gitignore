@@ -1,0 +1,51 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# build outputs
+.next
+out
+dist
+build
+.turbo
+*.tsbuildinfo
+next-env.d.ts
+
+# testing
+coverage
+playwright-report
+test-results
+blob-report
+playwright/.cache
+
+# env
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+*.pem
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# editors
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# vercel
+.vercel
+
+# generated assets scratch
+.cache
+
+# Next.js image optimizer cache lives here in dev
+.next/dev
+# local scratch
+.cache

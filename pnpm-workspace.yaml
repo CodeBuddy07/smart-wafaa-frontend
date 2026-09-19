@@ -1,0 +1,13 @@
+# pnpm project settings (single project — no `packages` key, so this is NOT a workspace).
+# Native deps explicitly allowed to run install scripts; pnpm blocks them by default.
+allowBuilds:
+  "@parcel/watcher": true
+  "@swc/core": true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+
+# pnpm's supply-chain cool-down (blocks packages published < 24h ago).
+# DefinitelyTyped ships type-only packages many times a day — safe to exempt.
+minimumReleaseAgeExclude:
+  - "@types/*"

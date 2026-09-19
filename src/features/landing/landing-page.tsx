@@ -9,6 +9,7 @@ import { ProximityPush } from "./sections/proximity-push";
 import { RewardFormats } from "./sections/reward-formats";
 import { StaffRewards } from "./sections/staff-rewards";
 import { TrustedBy } from "./sections/trusted-by";
+import { WalletPreview } from "./sections/wallet-preview";
 import { WhyLoyalty } from "./sections/why-loyalty";
 
 /**
@@ -21,6 +22,7 @@ export function LandingPage() {
       <Hero />
       <CoreArchitecture />
       <Features />
+      <WalletPreview />
       <HowItWorks />
       <RewardFormats />
       <WhyLoyalty />

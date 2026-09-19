@@ -180,6 +180,10 @@ export function Pricing() {
             );
           })}
         </Stagger>
+
+        <Reveal className="mt-6 text-center text-[12px] text-ink-400" delay={0.2}>
+          <p>{t("vatNote")}</p>
+        </Reveal>
       </Container>
     </section>
   );

@@ -26,7 +26,7 @@
     "startFreeTrial": "Start Free Trial"
   },
   "hero": {
-    "eyebrow": "Smart Wafaa App Downloads • Native Apple & Google Wallet",
+    "eyebrow": "No app downloads • Native Apple & Google Wallet passes",
     "title": "The Smart Way To Reward Customers.",
     "accent": "Right In Their Wallet.",
     "description": "Create modular digital loyalty programmes with stamps, subscriptions, cashback, tiers, tabs, and points—delivered directly inside smartphone wallets in seconds.",
@@ -47,16 +47,57 @@
       "live": "Live Stream"
     },
     "cards": {
-      "coffee": {
-        "brand": "Coffee Shop",
-        "stamps": "Coffee stamps (1/5)",
-        "sweet": "Sweet (2/5)",
-        "gift": "Gift",
-        "fullName": "Full name",
-        "holder": "Khaled Aldogme"
+      "apple": {
+        "logoText": "Roast & Brew",
+        "headerLabel": "Stamps",
+        "headerValue": "9/10",
+        "primaryLabel": "Coffee stamps",
+        "primaryValue": "9 of 10",
+        "fields": [
+          {
+            "label": "Member",
+            "value": "Khaled Aldogme"
+          },
+          {
+            "label": "Next reward",
+            "value": "Free coffee"
+          }
+        ],
+        "barcodeAlt": "4521 8830 1120"
       },
-      "dark": { "holder": "Lukas Muller", "tier": "Black Tier", "points": "12,480 pts" },
-      "light": { "hello": "Hello", "holder": "Rayan", "balance": "Balance", "amount": "SAR 240" }
+      "google": {
+        "issuerName": "Nakheel Boutiques",
+        "programName": "Nakheel Rewards",
+        "rows": [
+          {
+            "label": "Points",
+            "value": "2,480"
+          },
+          {
+            "label": "Rewards",
+            "value": "1 available"
+          }
+        ],
+        "barcodeAlt": "NB-88410-227"
+      },
+      "membership": {
+        "logoText": "Forge Club",
+        "headerLabel": "Tier",
+        "headerValue": "Black",
+        "primaryLabel": "Member",
+        "primaryValue": "Lukas Muller",
+        "fields": [
+          {
+            "label": "Points",
+            "value": "12,480"
+          },
+          {
+            "label": "Valid thru",
+            "value": "12/26"
+          }
+        ],
+        "barcodeAlt": "FC 0921 4471"
+      }
     }
   },
   "architecture": {
@@ -72,8 +113,8 @@
         "description": "Stamps, subscriptions, points, credit tabs & cashback."
       },
       {
-        "title": "Smart Wafaa-App Friction",
-        "description": "No app store downloads, 10x higher customer sign-up."
+        "title": "Zero App Friction",
+        "description": "No app store downloads — 10x higher customer sign-up."
       },
       {
         "title": "Zero Hardware Costs",
@@ -393,7 +434,8 @@
         ],
         "cta": "Contact Sales"
       }
-    ]
+    ],
+    "vatNote": "Prices exclude VAT."
   },
   "trusted": {
     "eyebrow": "Trusted by premier roasteries, hospitality brands & retail networks",
@@ -460,11 +502,194 @@
     },
     "privacy": "Privacy & Security Policy",
     "copyright": "Copyright © {year} Smart Wafaa Native Loyalty Engine. All rights reserved.",
-    "languages": { "en": "English (EN)", "ar": "العربية (AR)" }
+    "languages": {
+      "en": "English (EN)",
+      "ar": "العربية (AR)"
+    },
+    "legal": {
+      "title": "Legal",
+      "links": ["Terms of Service", "Privacy Policy", "Refund Policy"],
+      "company": "Smart Wafaa Information Technology Est. · CR 1010XXXXXX · VAT 3XXXXXXXXXXXXXX",
+      "address": "Riyadh, Kingdom of Saudi Arabia",
+      "contact": "hello@smartwafaa.com"
+    }
   },
   "notFound": {
     "title": "Page not found",
     "description": "The page you are looking for does not exist or has moved.",
     "back": "Back to home"
+  },
+  "walletPreview": {
+    "eyebrow": "Pass preview • Apple Wallet & Google Wallet",
+    "title": "Your Card, Exactly as Customers Will See It",
+    "description": "Every programme ships as a native PassKit store card and a Google Wallet loyalty class — the real pass, signed with your own certificates, updating live on every stamp. No web views, no screenshots.",
+    "apple": "Apple Wallet",
+    "google": "Google Wallet",
+    "appleTitle": "Apple Wallet · store card",
+    "googleTitle": "Google Wallet · loyalty card",
+    "walletHeaderApple": "Wallet",
+    "walletDone": "Done",
+    "walletHeaderGoogle": "Google Wallet",
+    "details": "Details",
+    "appleNotes": [
+      {
+        "title": "Logo & logo text",
+        "body": "Top-leading corner, up to 160×50 pt. Stays visible when passes are stacked in Wallet."
+      },
+      {
+        "title": "Header field",
+        "body": "Stamp count or balance — readable without opening the pass."
+      },
+      {
+        "title": "Strip image · 375×144 pt",
+        "body": "Where the stamp grid lives. Re-issued on every punch so the pass updates in place."
+      },
+      {
+        "title": "Secondary fields",
+        "body": "Member name, tier, next reward — up to four across one row."
+      },
+      {
+        "title": "Barcode",
+        "body": "QR, Aztec, PDF417 or Code 128 with alt text — scanned by any staff phone."
+      }
+    ],
+    "googleNotes": [
+      {
+        "title": "Program logo",
+        "body": "Circular mask, 660×660 px minimum. Google derives the card colour from it unless you set one."
+      },
+      {
+        "title": "Issuer & programme name",
+        "body": "Card-title row — fixed position, labels translated by Google Wallet."
+      },
+      {
+        "title": "Points & rewards rows",
+        "body": "loyaltyPoints and secondaryLoyaltyPoints, or any two custom text modules."
+      },
+      {
+        "title": "QR & alternate text",
+        "body": "barcode.alternateText prints beneath the code for manual entry."
+      },
+      {
+        "title": "Hero image · 1032×812 px",
+        "body": "Full-width artwork under the barcode — your seasonal campaign space."
+      }
+    ],
+    "chips": [
+      "Signed with your Apple Pass Type ID",
+      "Google Wallet API issuer account",
+      "Push updates on every stamp"
+    ],
+    "appleRows": ["Automatic Updates", "Notifications", "Share Pass"],
+    "googleRows": ["Nearby locations", "Program terms", "Remove pass"]
+  },
+  "legal": {
+    "updated": "Last updated {date}",
+    "draftNotice": "Draft — this text is a starting point and must be reviewed by legal counsel before publication.",
+    "back": "Back to home",
+    "pages": {
+      "terms": {
+        "title": "Terms of Service",
+        "intro": "These terms govern your use of the Smart Wafaa platform, merchant dashboard, staff terminal and wallet passes issued through it.",
+        "sections": [
+          {
+            "heading": "1. The service",
+            "body": "Smart Wafaa provides software that lets merchants design, issue and update loyalty passes for Apple Wallet and Google Wallet. We do not operate your loyalty programme; you set its rules and remain responsible for honouring rewards to your customers."
+          },
+          {
+            "heading": "2. Accounts and staff access",
+            "body": "You are responsible for everyone who uses your merchant account, including staff terminal PINs. Keep credentials confidential and tell us immediately about any unauthorised use."
+          },
+          {
+            "heading": "3. Subscription and billing",
+            "body": "Plans are billed monthly or yearly in advance and exclude VAT. You may upgrade, downgrade or cancel at any time from the dashboard; changes take effect at the next billing date unless stated otherwise."
+          },
+          {
+            "heading": "4. Acceptable use",
+            "body": "Do not use the service to send misleading offers, collect customer data without consent, or breach Apple's or Google's wallet platform policies. We may suspend accounts that put those platform relationships at risk."
+          },
+          {
+            "heading": "5. Customer data",
+            "body": "Customer data you collect through passes belongs to you. We process it on your behalf under our Privacy Policy and the applicable Saudi Personal Data Protection Law (PDPL)."
+          },
+          {
+            "heading": "6. Availability and support",
+            "body": "We aim for 99.9% monthly availability of the pass-update service. Planned maintenance is announced in advance in the dashboard."
+          },
+          {
+            "heading": "7. Liability",
+            "body": "To the extent permitted by law, our total liability for any claim is limited to the fees you paid in the twelve months before the claim arose."
+          },
+          {
+            "heading": "8. Governing law",
+            "body": "These terms are governed by the laws of the Kingdom of Saudi Arabia. Disputes are subject to the competent courts of Riyadh."
+          }
+        ]
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "intro": "This policy explains what personal data Smart Wafaa collects, why, and the choices you have — for merchants and for the customers who hold passes.",
+        "sections": [
+          {
+            "heading": "1. Data we collect from merchants",
+            "body": "Business name, commercial registration details, contact person, billing information and usage logs of the dashboard and staff terminal."
+          },
+          {
+            "heading": "2. Data processed for customers",
+            "body": "When a customer joins a programme we process the fields the merchant chooses (typically name and phone number), the pass identifier, stamp/point balances and, if the customer allows it, coarse location for lockscreen relevance. We never receive wallet payment credentials."
+          },
+          {
+            "heading": "3. How we use data",
+            "body": "To issue and update passes, run the rules engine, show merchants their analytics, send transactional notifications and comply with legal obligations. We do not sell personal data."
+          },
+          {
+            "heading": "4. Sharing",
+            "body": "Data is shared with Apple and Google only as required to deliver passes to their wallet apps, with our hosting and messaging providers under data-processing agreements, and with authorities when the law requires it."
+          },
+          {
+            "heading": "5. Retention",
+            "body": "Merchant data is retained for the life of the account plus the period required by Saudi commercial and tax law. Customer pass data is deleted or anonymised within 90 days of a programme being closed."
+          },
+          {
+            "heading": "6. Your rights",
+            "body": "Under the PDPL you may request access to, correction of, or deletion of your personal data, and object to certain processing. Contact us at the address in the footer."
+          },
+          {
+            "heading": "7. Security",
+            "body": "Passes are signed with platform certificates, data is encrypted in transit (TLS 1.3) and at rest, and access is role-based and logged."
+          }
+        ]
+      },
+      "refunds": {
+        "title": "Refund Policy",
+        "intro": "How subscription fees are refunded, and what happens to a merchant's passes if a plan is cancelled.",
+        "sections": [
+          {
+            "heading": "1. Free trial",
+            "body": "Every new merchant account starts with a free trial. No payment method is required and nothing is charged until you choose a paid plan."
+          },
+          {
+            "heading": "2. Monthly plans",
+            "body": "Monthly fees are non-refundable once the billing period has started. Cancelling stops the next renewal; your programme stays live until the end of the paid period."
+          },
+          {
+            "heading": "3. Yearly plans",
+            "body": "You may cancel a yearly plan within 14 days of the first payment for a full refund. After 14 days, the remaining months are not refundable but you keep access until the term ends."
+          },
+          {
+            "heading": "4. Service failures",
+            "body": "If a verified outage of the pass-update service exceeds our availability commitment in a month, we credit that month's fee to your next invoice on request."
+          },
+          {
+            "heading": "5. Customer passes after cancellation",
+            "body": "Passes already in customers' wallets keep working in read-only mode for 30 days after cancellation so you can communicate the change; after that they are voided."
+          },
+          {
+            "heading": "6. How to request",
+            "body": "Email us from your registered account address with your merchant ID. Refunds are returned to the original payment method within 10 business days."
+          }
+        ]
+      }
+    }
   }
 }

@@ -28,6 +28,7 @@ export const siteConfig = {
 export const sectionIds = {
   hero: "top",
   features: "features",
+  wallet: "wallet-preview",
   howItWorks: "how-it-works",
   formats: "card-programme",
   why: "why-loyalty",

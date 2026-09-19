@@ -16,6 +16,7 @@ export type WhyItem = Messages["why"]["items"][number];
 export type PushItem = Messages["push"]["items"][number];
 export type Plan = Messages["pricing"]["plans"][number];
 export type FaqItem = Messages["faq"]["items"][number];
+export type WalletNote = Messages["walletPreview"]["appleNotes"][number];
 
 /** Non-translatable pricing data. Currency and amounts live in code, not copy. */
 export const PLAN_PRICES = [

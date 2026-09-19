@@ -38,6 +38,23 @@ test.describe("landing page", () => {
     }
   });
 
+  test("wallet preview switches between Apple and Google renders", async ({ page }) => {
+    await page.goto("/");
+    const section = page.locator("#wallet-preview");
+    await section.scrollIntoViewIfNeeded();
+    await expect(section.getByRole("tab", { name: /apple wallet/i })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+    await expect(section.getByText("Roast & Brew").first()).toBeVisible();
+    await section.getByRole("tab", { name: /google wallet/i }).click();
+    await expect(section.getByRole("tab", { name: /google wallet/i })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+    await expect(section.getByText("Nakheel Rewards").first()).toBeVisible();
+  });
+
   test("pricing toggle switches to yearly prices", async ({ page }) => {
     await page.goto("/");
     await page.locator("#pricing").scrollIntoViewIfNeeded();
@@ -85,6 +102,23 @@ test.describe("i18n", () => {
     await page.getByRole("radio", { name: "AR" }).locator("visible=true").first().click();
     await expect(page).toHaveURL(/\/ar$/);
     await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+  });
+});
+
+test.describe("legal", () => {
+  for (const slug of ["terms", "privacy", "refunds"]) {
+    test(`/${slug} renders in both locales`, async ({ page }) => {
+      await page.goto(`/${slug}`);
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      await page.goto(`/ar/${slug}`);
+      await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    });
+  }
+
+  test("unknown paths 404", async ({ request }) => {
+    const res = await request.get("/definitely-not-a-page");
+    expect(res.status()).toBe(404);
   });
 });
 

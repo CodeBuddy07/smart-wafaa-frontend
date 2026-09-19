@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
 const COLUMNS = ["product", "solutions", "partners", "security"] as const;
+const LEGAL_HREFS = ["/terms", "/privacy", "/refunds"] as const;
 
 export function SiteFooter() {
   const t = useTranslations("footer");
@@ -69,7 +70,30 @@ export function SiteFooter() {
           })}
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-7 text-xs text-ink-400 sm:flex-row sm:items-center sm:justify-between">
+        {/* legal / company identity — required for the trade-licence listing */}
+        <div className="mt-12 grid gap-6 border-t border-white/10 pt-8 text-xs text-ink-400 md:grid-cols-[1fr_auto] md:items-start">
+          <div className="space-y-1.5">
+            <p className="font-medium text-ink-300">{t("legal.company")}</p>
+            <p>{t("legal.address")}</p>
+            <a
+              href={`mailto:${t("legal.contact")}`}
+              className="inline-block text-brand-300 hover:text-white"
+            >
+              {t("legal.contact")}
+            </a>
+          </div>
+          <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            {(t.raw("legal.links") as string[]).map((label, i) => (
+              <li key={label}>
+                <Link href={LEGAL_HREFS[i] ?? "/"} className="transition-colors hover:text-white">
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-6 flex flex-col gap-4 text-xs text-ink-500 sm:flex-row sm:items-center sm:justify-between">
           <p>{t("copyright", { year })}</p>
           <ul className="flex items-center gap-3">
             {routing.locales.map((l, i) => (

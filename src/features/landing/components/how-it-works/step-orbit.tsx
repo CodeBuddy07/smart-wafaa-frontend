@@ -312,7 +312,7 @@ function PhoneScene({ active, screens, compact }: PhoneSceneProps) {
         height={HAND.h}
         sizes={`${hand.width}px`}
         draggable={false}
-        className="pointer-events-none absolute start-1/2 max-w-none -translate-x-1/2 select-none rtl:translate-x-1/2 rtl:-scale-x-100"
+        className="pointer-events-none absolute start-1/2 max-w-none -translate-x-1/2 [mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)] select-none rtl:translate-x-1/2 rtl:-scale-x-100"
         style={{ width: hand.width, height: hand.height, top: hand.top }}
       />
       <motion.div

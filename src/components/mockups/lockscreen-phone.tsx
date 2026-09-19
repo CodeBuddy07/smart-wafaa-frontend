@@ -57,11 +57,11 @@ export function LockscreenPhone({
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -20% 0px" }}
           transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 22 }}
-          className="absolute inset-x-3 top-[35%] rounded-2xl border border-white/10 bg-[#1a2430]/90 p-3 shadow-lg backdrop-blur"
+          className="absolute inset-x-3 top-[35%] rounded-[15px] border border-white/10 bg-[#1a2430]/90 p-3 shadow-lg backdrop-blur"
         >
           <div className="flex items-center justify-between">
             <span className="inline-flex items-center gap-1.5 text-[8px] font-bold tracking-[0.16em] text-white/70 uppercase">
-              <span className="flex size-4 items-center justify-center rounded-[4px] bg-gold-500 text-brand-950">
+              <span className="flex size-4 items-center justify-center rounded-[3px] bg-gold-500 text-brand-950">
                 <Coffee className="size-2.5" />
               </span>
               {merchant}

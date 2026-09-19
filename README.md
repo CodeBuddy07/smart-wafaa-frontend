@@ -54,10 +54,11 @@ src/
 │   ├── ui/                 # design-system primitives (Button, Badge, Card, Container, IconTile)
 │   ├── layout/             # SiteHeader, SiteFooter, LocaleSwitcher, SkipLink
 │   ├── motion/             # Reveal, Stagger, Floating, TextReveal, Marquee, AnimatedNumber, Providers
-│   ├── mockups/            # WalletCards, PhoneFrame, LockscreenPhone, QrCode (all CSS/SVG — no images)
+│   ├── mockups/            # wallet-pass (Apple store card / Google loyalty card), pass-presets, PhoneFrame (iOS/Android), LockscreenPhone, QrCode
 │   └── brand/              # Logo
+├── features/legal/         # LegalPage — /terms, /privacy, /refunds (drafts, EN + AR)
 ├── features/landing/
-│   ├── landing-page.tsx    # section order (mirrors the Figma frame)
+│   ├── landing-page.tsx    # section order (mirrors the Figma frame + Wallet Preview)
 │   ├── sections/           # one file per section — hero, features, how-it-works, pricing, faq…
 │   ├── components/         # section-specific pieces (SectionHeading, how-it-works/*)
 │   ├── hooks/              # useAutoAdvance (orbit carousel timer)
@@ -69,6 +70,7 @@ src/
 └── test/                   # Vitest setup
 messages/                   # en.json (schema) · ar.json — key parity is unit-tested
 public/images/how-it-works/ # hand-phone.webp (Gemini-generated, backdrop keyed to alpha)
+public/images/passes/       # boutique-hero.webp (Gemini-generated, Google hero 1032×812)
 e2e/                        # Playwright specs
 ```
 
@@ -87,6 +89,19 @@ e2e/                        # Playwright specs
 A card occupies slot `(index − active) mod 5`, so selecting any step rotates the ring until that card lands in the focused
 top-start slot. `useAutoAdvance` cycles steps every 5.2 s while the stage is in view, pauses on hover, and pauses for 12 s after a
 user selection. On `< lg` screens the ring collapses to a single swipe-style card with prev/next controls.
+
+## Wallet passes are spec-accurate
+
+`components/mockups/wallet-pass.tsx` renders the two real pass layouts rather than decorative cards:
+
+| Component           | Follows                                                                   | Anatomy (top → bottom)                                                                                                |
+| ------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `AppleStoreCard`    | PassKit `storeCard` (Apple HIG: logo ≤160×50pt, strip 375×144pt)          | logo + logoText · headerFields → strip (primaryFields overlaid) → secondary/auxiliary → barcode + altText             |
+| `GoogleLoyaltyCard` | Google Wallet Loyalty default template (`programLogo` circular, hero 5:4) | programLogo · issuerName · programName → loyaltyPoints / secondaryLoyaltyPoints → barcode + alternateText → heroImage |
+
+Both take a `width` and scale every dimension from the platform's reference width (375pt / 360dp), so the same
+component is used in the hero fan, the How-it-works phone and the Wallet Preview section. The stamp grid is
+drawn _into the strip_ (`StampGrid`) because that is how stamp progress actually ships to Apple Wallet.
 
 ## Assets
 

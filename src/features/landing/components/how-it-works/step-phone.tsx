@@ -1,11 +1,11 @@
 "use client";
 
-import { ChevronDown, ChevronLeft, Coffee } from "lucide-react";
+import { ChevronDown, ChevronLeft } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useTranslations } from "next-intl";
 
+import { CoffeeStampPass, type AppleCopy } from "@/components/mockups/pass-presets";
 import { PhoneFrame } from "@/components/mockups/phone-frame";
-import { QrCode } from "@/components/mockups/qr-code";
 import type { StepScreen } from "@/features/landing/content";
 import { cn } from "@/lib/utils";
 
@@ -18,58 +18,60 @@ interface StepPhoneProps {
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 /**
- * The phone at the centre of the ring. The status card at the top swaps with
- * each step; the loyalty pass beneath it lights up on the final "Earn" step.
+ * The phone at the centre of the ring. The status card swaps with each step;
+ * the Apple Wallet store card beneath it gets its 10th stamp on the final
+ * "Earn" step. Radii follow iOS (≈10pt cards) scaled to the frame width.
  */
 export function StepPhone({ active, screens, className }: StepPhoneProps) {
   const t = useTranslations("howItWorks");
+  const th = useTranslations("hero");
+  const apple = (th.raw("cards") as { apple: AppleCopy }).apple;
   const screen = screens[active] ?? screens[0];
   const earned = active === screens.length - 1;
 
   return (
     <PhoneFrame className={cn("mx-auto", className)}>
-      <div className="flex h-full flex-col bg-[#f4f6f5] pt-12">
+      <div className="flex h-full flex-col bg-[#f2f2f7] pt-11">
         {/* nav */}
-        <div className="flex items-center justify-between px-4">
-          <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-ink-900">
+        <div className="flex items-center justify-between px-3.5">
+          <span className="inline-flex items-center gap-0.5 text-[12px] font-semibold text-[#1c1c1e]">
             <ChevronLeft className="size-3.5 rtl:-scale-x-100" />
             {t("phone.back")}
           </span>
-          <span className="inline-flex items-center gap-1 rounded-full border border-ink-200 bg-white px-2.5 py-1 text-[10px] font-semibold text-ink-700">
+          <span className="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-[#1c1c1e] shadow-[0_1px_2px_rgb(0_0_0/0.06)]">
             {t("phone.actions")}
             <ChevronDown className="size-3" />
           </span>
         </div>
 
         {/* status card */}
-        <div className="mx-3 mt-4 rounded-2xl bg-white p-3 shadow-card">
+        <div className="mx-2.5 mt-3 rounded-[7px] bg-white px-3 py-2.5 shadow-[0_1px_2px_rgb(0_0_0/0.05)]">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={active}
-              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+              initial={{ opacity: 0, y: 8, filter: "blur(3px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
-              transition={{ duration: 0.35, ease: EASE }}
+              exit={{ opacity: 0, y: -8, filter: "blur(3px)" }}
+              transition={{ duration: 0.32, ease: EASE }}
             >
               <div className="flex items-center justify-between">
-                <p className="text-[9px] font-bold tracking-[0.16em] text-ink-400 uppercase">
+                <p className="text-[9px] font-bold tracking-[0.12em] text-ink-400 uppercase">
                   {screen?.title}
                 </p>
                 <span
                   className={cn(
-                    "rounded-full px-2 py-0.5 text-[8.5px] font-bold tracking-wide uppercase",
+                    "rounded-[4px] px-1.5 py-0.5 text-[8.5px] font-bold tracking-wide uppercase",
                     earned ? "bg-gold-100 text-accent-amber" : "bg-brand-50 text-brand-800",
                   )}
                 >
                   {screen?.status}
                 </span>
               </div>
-              <p className="mt-1.5 font-display text-[13px] font-bold text-ink-900">
+              <p className="mt-1 font-display text-[13px] font-bold text-ink-900">
                 {screen?.line1}
               </p>
               <p className="text-[11px] text-ink-500">{screen?.line2}</p>
-              {/* progress */}
-              <div className="mt-2.5 h-1 overflow-hidden rounded-full bg-ink-100">
+              <div className="mt-2 h-[3px] overflow-hidden rounded-full bg-ink-100">
                 <motion.div
                   className={cn("h-full rounded-full", earned ? "bg-gold-500" : "bg-brand-600")}
                   initial={{ width: 0 }}
@@ -81,56 +83,21 @@ export function StepPhone({ active, screens, className }: StepPhoneProps) {
           </AnimatePresence>
         </div>
 
-        {/* loyalty pass */}
+        {/* the real pass, as Wallet renders it */}
         <motion.div
-          className="mx-3 mt-3 flex-1 overflow-hidden rounded-2xl bg-white shadow-card"
+          className="mx-2.5 mt-2.5"
           animate={
             earned
               ? {
                   boxShadow:
-                    "0 0 0 3px rgb(242 215 116 / 0.7), 0 20px 40px -20px rgb(180 83 9 / 0.4)",
+                    "0 0 0 2px rgb(242 215 116 / 0.9), 0 14px 30px -14px rgb(180 83 9 / 0.5)",
                 }
-              : { boxShadow: "0 1px 2px rgb(15 23 42 / 0.04)" }
+              : { boxShadow: "0 0 0 0px rgb(242 215 116 / 0)" }
           }
           transition={{ duration: 0.5 }}
+          style={{ borderRadius: 6 }}
         >
-          <div className="flex items-center gap-2 px-3 pt-3">
-            <span className="flex size-7 items-center justify-center rounded-md bg-[#3f2a20] text-white">
-              <Coffee className="size-3.5" />
-            </span>
-            <p className="text-[10px] font-semibold text-ink-700">Roast & Brew</p>
-          </div>
-          <div className="mx-3 mt-2 grid grid-cols-5 gap-1 rounded-lg bg-[#efe6dc] p-1.5">
-            {Array.from({ length: 10 }).map((_, i) => {
-              const filled = i < 9 || earned;
-              return (
-                <motion.span
-                  key={i}
-                  animate={{
-                    backgroundColor: filled ? "#3f2a20" : "#ffffff",
-                    scale: earned && i === 9 ? [1, 1.4, 1] : 1,
-                  }}
-                  transition={{ duration: 0.45, delay: earned && i === 9 ? 0.3 : 0 }}
-                  className="flex aspect-square items-center justify-center rounded-[5px]"
-                >
-                  <Coffee className={cn("size-2.5", filled ? "text-white" : "text-[#c9b8a6]")} />
-                </motion.span>
-              );
-            })}
-          </div>
-          <div className="mt-2 flex items-center justify-between px-3">
-            <div>
-              <p className="text-[9px] text-ink-400">{t("phone.hello")}</p>
-              <p className="font-display text-[12px] font-bold text-ink-900">{t("phone.holder")}</p>
-            </div>
-            <div className="text-end">
-              <p className="text-[9px] text-ink-400">{t("phone.yourGift")}</p>
-              <p className="font-display text-[12px] font-bold text-ink-900">{earned ? 4 : 3}</p>
-            </div>
-          </div>
-          <div className="mt-2 flex justify-center pb-3">
-            <QrCode seed="rayan-roast-brew" size={78} />
-          </div>
+          <CoffeeStampPass copy={apple} width={205} stamps={earned ? 10 : 9} />
         </motion.div>
       </div>
     </PhoneFrame>

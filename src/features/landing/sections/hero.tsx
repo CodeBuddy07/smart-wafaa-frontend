@@ -15,7 +15,13 @@ import {
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
 
-import { CoffeeStampCard, DarkTierCard, LightBalanceCard } from "@/components/mockups/wallet-card";
+import {
+  BoutiqueLoyaltyCard,
+  CoffeeStampPass,
+  MembershipPass,
+  type AppleCopy,
+  type GoogleCopy,
+} from "@/components/mockups/pass-presets";
 import { Floating } from "@/components/motion/floating";
 import { TextReveal } from "@/components/motion/text-reveal";
 import { Button, Container } from "@/components/ui";
@@ -179,83 +185,55 @@ function HeroCards() {
     my.set(0);
   };
 
-  const cards = t.raw("cards") as {
-    coffee: {
-      brand: string;
-      stamps: string;
-      sweet: string;
-      gift: string;
-      fullName: string;
-      holder: string;
-    };
-    dark: { holder: string; tier: string; points: string };
-    light: { hello: string; holder: string; balance: string; amount: string };
-  };
+  const cards = t.raw("cards") as { apple: AppleCopy; google: GoogleCopy; membership: AppleCopy };
 
   return (
     <div
       ref={ref}
       onPointerMove={onMove}
       onPointerLeave={onLeave}
-      className="relative mx-auto h-[420px] w-full max-w-[520px] [perspective:1400px] sm:h-[480px] lg:h-[520px]"
+      className="relative mx-auto h-[440px] w-full max-w-[540px] [perspective:1400px] sm:h-[500px] lg:h-[540px]"
     >
       <motion.div
         style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }}
         className="relative h-full w-full"
       >
-        {/* back-left: light card */}
+        {/* back-start: Google Wallet loyalty card */}
         <motion.div
-          className="absolute start-[6%] top-[14%] will-change-transform"
+          className="absolute start-[2%] top-[6%] will-change-transform"
           initial={{ opacity: 0, rotate: 0, x: 80, y: 40 }}
-          animate={{ opacity: 1, rotate: -14, x: 0, y: 0 }}
+          animate={{ opacity: 1, rotate: -13, x: 0, y: 0 }}
           transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.5 }}
           style={{ translateZ: -40 }}
         >
           <Floating amplitude={6} duration={6} delay={0.4}>
-            <LightBalanceCard
-              hello={cards.light.hello}
-              holder={cards.light.holder}
-              balanceLabel={cards.light.balance}
-              amount={cards.light.amount}
-            />
+            <BoutiqueLoyaltyCard copy={cards.google} width={212} />
           </Floating>
         </motion.div>
 
-        {/* back-right: dark card */}
+        {/* back-end: membership pass */}
         <motion.div
-          className="absolute end-[4%] top-[18%] will-change-transform"
+          className="absolute end-[2%] top-[14%] will-change-transform"
           initial={{ opacity: 0, rotate: 0, x: -80, y: 40 }}
           animate={{ opacity: 1, rotate: 12, x: 0, y: 0 }}
           transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.6 }}
           style={{ translateZ: -20 }}
         >
           <Floating amplitude={7} duration={7} delay={0.9}>
-            <DarkTierCard
-              holder={cards.dark.holder}
-              tier={cards.dark.tier}
-              points={cards.dark.points}
-            />
+            <MembershipPass copy={cards.membership} width={212} />
           </Floating>
         </motion.div>
 
-        {/* front: coffee stamps card */}
+        {/* front: Apple Wallet coffee stamps */}
         <motion.div
-          className="absolute start-1/2 top-[8%] -translate-x-1/2 will-change-transform rtl:translate-x-1/2"
+          className="absolute start-1/2 top-[9%] -translate-x-1/2 will-change-transform rtl:translate-x-1/2"
           initial={{ opacity: 0, rotate: 0, y: 60, scale: 0.9 }}
           animate={{ opacity: 1, rotate: -4, y: 0, scale: 1 }}
           transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.4 }}
           style={{ translateZ: 40 }}
         >
           <Floating amplitude={9} duration={5.5}>
-            <CoffeeStampCard
-              brand={cards.coffee.brand}
-              stampsLabel={cards.coffee.stamps}
-              sweetLabel={cards.coffee.sweet}
-              giftLabel={cards.coffee.gift}
-              fullNameLabel={cards.coffee.fullName}
-              holder={cards.coffee.holder}
-              className="h-[340px]"
-            />
+            <CoffeeStampPass copy={cards.apple} width={240} />
           </Floating>
         </motion.div>
 
